@@ -1,4 +1,3 @@
-use utf8;
 use Encode;
 use strict;
 use Irssi;
@@ -7,22 +6,21 @@ use vars qw($VERSION %IRSSI);
 use Irssi;
 $VERSION = '1.00';
 %IRSSI = (
-    authors     => 'A. U. Thor',
+    authors     => 'Perttu Rautaniemi',
     contact     => 'author@far.away',
     name        => 'My First Script',
     description => 'This script allows ' .
-                   'you to print Hello ' .
-                   'World using a command.',
-    license     => 'Public Domain',
+                   'you to print words characters ' .
+                   'separated to multiple lines ',
+    license     => 'GPL',
 );
 sub lontoo {
     my ($data, $server, $witem) = @_;
     return unless $witem;
-    my $string = encode("utf8", $data);
-	my @string = split undef, $string;
+	my @string = split undef, $data;
 	for(my $i = 0; $i < @string.length; $i++){
-        if ($i == 0){$witem->command("MSG ".$witem->{name}." @string");}
-        else{$witem->command("MSG ".$witem->{name}." @string[$i]");}
+        	if ($i == 0){$witem->command("MSG ".$witem->{name}." @string");}
+        	else{$witem->command("MSG ".$witem->{name}." @string[$i]");}
 	}
 
 }
