@@ -6,13 +6,13 @@ use vars qw($VERSION %IRSSI);
 use Irssi;
 $VERSION = '1.00';
 %IRSSI = (
-    authors     =>  'Perttu Rautaniemi',
-    contact     =>  'author@far.away',
-    name        =>  'My First Script',
-    description =>  'This script allows ' .
-                    'you to print words characters ' .
-                    'separated to multiple lines ',
-    license     =>  'GPL',
+    authors     => 'Perttu Rautaniemi',
+    contact     => 'author@far.away',
+    name        => 'My First Script',
+    description => 'This script allows ' .
+                   'you to print words characters ' .
+                   'separated to multiple lines ',
+    license     => 'GPL',
 );
 sub lontoo {
     my ($data, $server, $witem) = @_;
