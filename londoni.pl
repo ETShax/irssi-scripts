@@ -7,7 +7,7 @@ use Irssi;
 $VERSION = '1.00';
 %IRSSI = (
     authors     => 'Perttu Rautaniemi',
-    contact     => 'author@far.away',
+    contact     => 'ETS @ ircnet',
     name        => 'My First Script',
     description => 'This script allows ' .
                    'you to print words characters ' .
@@ -17,13 +17,14 @@ $VERSION = '1.00';
 sub lontoo {
     my ($data, $server, $witem) = @_;
     return unless $witem;
+    my $space = " ";
     my @string = split //, decode("utf-8",$data);
     for(my $i = 0; $i < @string.length; $i++) {
         if ($i == 0) {
             $witem->command("MSG ".$witem->{name}." @string");
         }
         else {
-            $witem->command("MSG ".$witem->{name}." @string[$i]");
+            $witem->command("MSG ".$witem->{name}." @string[$i]".$space x (($i-1)*2+1)."@string[$i]" );
         }
     }
 }
